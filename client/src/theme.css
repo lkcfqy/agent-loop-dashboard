@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&display=swap');
+@import "tailwindcss";
+@import "tailwindcss-safe-area";
+
+@theme {
+  --text-xs: 12px;
+  --text-xs--line-height: 16px;
+  --text-sm: 14px;
+  --text-sm--line-height: 20px;
+  --text-base: 16px;
+  --text-base--line-height: 24px;
+  --text-lg: 18px;
+  --text-lg--line-height: 28px;
+  --text-xl: 20px;
+  --text-xl--line-height: 28px;
+  --text-2xl: 24px;
+  --text-2xl--line-height: 32px;
+  --text-3xl: 30px;
+  --text-3xl--line-height: 36px;
+  --text-4xl: 36px;
+  --text-4xl--line-height: 40px;
+  --text-5xl: 48px;
+  --text-5xl--line-height: 52px;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+:root {
+  color-scheme: dark;
+  --bg: #040918;
+  --surface: #0a1230;
+  --surface2: #0d173c;
+  --text: #dceaff;
+  --dim: #7d8db0;
+  --border: #1d2c5e;
+  --accent: #38e1ff;
+  --accent2: #8b7bff;
+  --mint: #2ee6a8;
+  --red: #ff5d73;
+  --amber: #ffbe55;
+  --radius: 10px;
+  --space-surface: var(--surface);
+  --space-surface-alt: var(--surface2);
+  --space-muted: var(--dim);
+  --space-border: var(--border);
+  --space-accent: var(--accent);
+}
+
+body {
+  background: var(--bg);
+  font-family: var(--font-mono);
+}
+
+@keyframes hud-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+.hud-live-dot {
+  animation: hud-pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes hud-scan {
+  0%, 100% { box-shadow: 0 0 0 rgba(56, 225, 255, 0); }
+  50% { box-shadow: 0 0 18px rgba(56, 225, 255, 0.45); }
+}
+.hud-scanning {
+  animation: hud-scan 1.4s ease-in-out infinite;
+  border-color: var(--accent) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hud-live-dot, .hud-scanning { animation: none; }
+}

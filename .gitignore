@@ -1,0 +1,9 @@
+node_modules/
+app.db
+*.tsbuildinfo
+dist/
+dist-cvm/
+.space-build/
+.space-build-cvm/
+.harness/
+.DS_Store
